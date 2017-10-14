@@ -8,6 +8,7 @@ var bodyParser = require('body-parser');
 var index = require('./routes/index');
 var users = require('./routes/users');
 var cookie = require('./routes/cookie');
+var welcome = require('./routes/welcome');
 var cookieMiddleware = require('./routes/cookie-middleware');
 
 var app = express();
@@ -28,6 +29,7 @@ app.use(cookieMiddleware);
 
 app.use('/', index);
 app.use('/users', users);
+app.use('/welcome', welcome);
 app.use('/cookie', cookie);
 
 

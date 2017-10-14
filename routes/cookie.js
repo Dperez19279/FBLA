@@ -8,8 +8,8 @@ router.get('/', function(req, res, next) {
         // The cookie was not set, the user's browser has cookies disabled
         res.send('Please enable cookies');
     } else {
-        // The cookie was set, redirect them back to the page they were trying to visit
-        res.redirect('back');
+        // The cookie was set, redirect them to the welcome page
+        res.redirect('/welcome');
     }
 });
 
