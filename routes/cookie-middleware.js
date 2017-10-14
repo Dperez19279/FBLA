@@ -11,8 +11,8 @@ router.use(function(req, res, next) {
         var randomNumber = Math.random().toString();
         randomNumber = randomNumber.substring(2, randomNumber.length);
 
-        // Set the cookie with a max age of 1 year : 60 * 24 * 365 = 525600 seconds
-        res.cookie('sessionId', randomNumber, { maxAge: 525600, httpOnly: true });
+        // Set the cookie with a max age of approximately 1 year : 1000 * 60 * 60 * 24 * 365 = 31536000 milliseconds
+        res.cookie('sessionId', randomNumber, { maxAge: 31536000000, httpOnly: true });
 
         // Send user to cookie page to make user the cookie was set
         if (req.path === '/cookie') {
